@@ -290,7 +290,7 @@ INSERT INTO race_result VALUES
     ('RR16', 'R004', 'PLS02', 16, 0),
     ('RR17', 'R004', 'PNH27', 17, 0),
     ('RR18', 'R004', 'PVB77', 18, 0),
-    ('RR19', 'R004', 'PZG24', 'NC', 0),
-    ('RR20', 'R004', 'PLS02', 'NC', 0);
+    ('RR19', 'R004', 'PZG24', NULL, NULL),
+    ('RR20', 'R004', 'PLS02', NULL, NULL);
 
  
