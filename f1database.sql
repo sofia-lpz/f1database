@@ -40,7 +40,7 @@ create table constructor (
     constructor_nationality varchar(30),
     constructors_points int default 0,
     team_principal varchar(30),
-    num_engineers int,
+
     constructor_type enum('customer', 'builder'),
     constructor_championship_index int,
     constructor_wcs int,
@@ -162,21 +162,19 @@ INSERT INTO pilots VALUES
     ('PAA23','Alex Albon', 23, '1996-03-23', 27, 'Thai', 180, 68, 99,13,27, 'WILL'),
     ('PPG10', 'Pierre Gasly', 10,'1996-02-07', 27, 'French', 174, 64,0,11,62, 'ALPI');
 
---num of engineers is fictional, 
 INSERT INTO constructor VALUES
-    ('MERC', 'Mercedes', 'German', 382, 'Toto Wolff', 50, 'builder', 2, 2, 'PLW44', 'PGS63', 'CARM001'),
-    ('RBRA', 'Red Bull Racing', 'Austrian', 782, 'Christian Horner', 45, 'costumer', 1, 1, 'PMV01', 'PSP11', 'CARRB01'),
-    ('FERR', 'Ferrari', 'Italian', 362, 'Frederic Vasseur', 52, 'builder', 3, 3, 'PCL16', 'PCS55', 'CARF001'),
-    ('ALPI', 'Alpine', 'French', 108, 'Otmar Szafnauer', 43, 'builder', 6, 6, 'PEO31', 'PPG10', 'CARA001'),
-    ('ATAU', 'AlphaTauri', 'Italian', 21, 'Franz Tost', 65, 'customer', 8, 8, 'PDR03', 'PYT22', 'CARAT01'),
-    ('WILL', 'Williams Racing', 'British', 28, 'James Vowles', 63, 'customer', 7, 7, 'PAA23', 'PLG02', 'CARW001'),
-    ('ASTO', 'Aston Martin', 'British', 261, 'Mike Krack', 58, 'costumer', 5, 5, 'PLS18', 'PFA14', 'CARAM01'),
-    ('ALFA', 'Alfa Romeo Racing', 'Italy', 16, 'Alessandro Alunni Bravi', 53, 'customer', 9, 9, 'PZG24', 'PVB77', 'CARAR01'),
-    ('MCLA', 'Mclaren', 'British', 282, 'Andrea Stella', 53, 'customer', 4, 4, 'PLN04', 'POP81', 'CARMC01'),
-    ('HAAS', 'Haas F1 Team', 'American', 12, 'Guenther Steiner', 56, 'costumer', 10, 10, 'PKM20', 'PNH27', 'CARH001');
+    ('MERC', 'Mercedes', 'German', 382, 'Toto Wolff', 'builder', 2, 2, 'PLW44', 'PGS63', 'CARM001'),
+    ('RBRA', 'Red Bull Racing', 'Austrian', 782, 'Christian Horner', 'costumer', 1, 1, 'PMV01', 'PSP11', 'CARRB01'),
+    ('FERR', 'Ferrari', 'Italian', 362, 'Frederic Vasseur', 'builder', 3, 3, 'PCL16', 'PCS55', 'CARF001'),
+    ('ALPI', 'Alpine', 'French', 108, 'Otmar Szafnauer', 'builder', 6, 6, 'PEO31', 'PPG10', 'CARA001'),
+    ('ATAU', 'AlphaTauri', 'Italian', 21, 'Franz Tost', 'customer', 8, 8, 'PDR03', 'PYT22', 'CARAT01'),
+    ('WILL', 'Williams Racing', 'British', 28, 'James Vowles', 'customer', 7, 7, 'PAA23', 'PLG02', 'CARW001'),
+    ('ASTO', 'Aston Martin', 'British', 261, 'Mike Krack', 'costumer', 5, 5, 'PLS18', 'PFA14', 'CARAM01'),
+    ('ALFA', 'Alfa Romeo Racing', 'Italy', 16, 'Alessandro Alunni Bravi', 'customer', 9, 9, 'PZG24', 'PVB77', 'CARAR01'),
+    ('MCLA', 'Mclaren', 'British', 282, 'Andrea Stella', 'customer', 4, 4, 'PLN04', 'POP81', 'CARMC01'),
+    ('HAAS', 'Haas F1 Team', 'American', 12, 'Guenther Steiner', 'costumer', 10, 10, 'PKM20', 'PNH27', 'CARH001');
 
-
--- Insert data into the race table
+-- (dates are wrong)
 INSERT INTO race VALUES
     ('R003', 3, '2023-03-26 14:00:00', 58, '2023-03-26 12:00:00', 'PSP11', 'CAUS'),
     ('R001', 1, '2023-04-09 13:00:00', 71, '2023-04-09 11:30:00', 'PZG24', 'CBAH'),
@@ -202,7 +200,7 @@ INSERT INTO race VALUES
     ('R022', 22, '2024-01-21 15:00:00', 69, '2024-01-21 13:30:00', 'PVB77', 'CABU');
 
 
--- Insert data into the race_result table
+-- all race_results 
 INSERT INTO race_result VALUES 
 /*race result id, race id, pilot id, pilot final position, pilot points earned*/
     ('RR21', 'R003', 'PMV01', 1, 25),
