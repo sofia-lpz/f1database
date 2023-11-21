@@ -1,0 +1,167 @@
+create table car (
+    car_id varchar(50) primary key,
+    car_model varchar(50),
+    car_year int,
+    power_unit varchar(50),
+    engine_type varchar(50),
+    car_weight int
+);
+
+create table circuit (
+    circuit_id varchar(50) primary key,
+    circuit_name varchar(50),
+    circuit_country varchar(50),
+    circuit_city varchar(50),
+    drs_zones int,
+    sectors int,
+    turns int,
+    circuit_type varchar(30),
+    circuit_length_km int
+);
+
+
+create table constructor (
+    constructor_id varchar(50) primary key,
+    constructor_name varchar(50),
+    constructor_nationality varchar(50),
+    constructors_points int default 0,
+    team_principal varchar(50),
+
+    constructor_type varchar(50),
+    constructor_championship_index int,
+    constructor_wcs int,
+    pilot_id_1 varchar(50),
+    pilot_id_2 varchar(50),
+    car_id varchar(50),
+
+ 
+    foreign key (car_id) references car(car_id)
+);
+
+
+
+create table race (
+    race_id varchar(50) primary key,
+    race_index int,
+    race_time datetime,
+    race_laps int,
+    qualifying_time datetime,
+    pilot_id varchar(50),
+    race_circuit varchar(50),
+    foreign key (race_circuit) references circuit(circuit_id),
+  
+);
+
+CREATE TABLE race_result (
+    result_id varchar(50) PRIMARY KEY,
+    race_id varchar(50),
+    pilot_id varchar(50),
+    final_position INT,
+    points_earned INT,
+
+foreign key (race_id) references race(race_id)
+);
+
+
+-- car is ready
+INSERT INTO car VALUES
+  
+    ('CARM001', 'Mercedes AMG W14', 2023, 'mercedes', 'V6 Turbo', 740),
+    --('CARM002', 'Mercedes AMG W14', 2023, 'mercedes', 'V6 Turbo', 740),
+
+    ('CARF001', 'Ferrari SF-23', 2023, 'ferrari', 'V6 Turbo', 743),
+    --('CARF002', 'Ferrari SF-23', 2023, 'ferrari', 'V6 Turbo', 743),
+
+    ('CARRB01', 'Red Bull RB19', 2023, 'honda', 'V6 Turbo', 738),
+    --('CARRB02', 'Red Bull RB19', 2023, 'honda', 'V6 Turbo', 738),
+
+    ('CARMC01', 'McLaren MCL36', 2023, 'mercedes', 'V6 Turbo', 737),
+    --('CARMC02', 'McLaren MCL36', 2023, 'mercedes', 'V6 Turbo', 737),
+
+    ('CARAR01', 'Alfa Romeo C43', 2023, 'ferrari', 'V6 Turbo', 742),
+    --('CARAR02', 'Alfa Romeo C43', 2023, 'ferrari', 'V6 Turbo', 742),
+
+    ('CARAM01', 'Aston Martin AMR23', 2023, 'mercedes', 'V6 Turbo', 739),
+    --('CARAM02', 'Aston Martin AMR23', 2023, 'mercedes', 'V6 Turbo', 739),
+
+    ('CARAT01', 'AlphaTauri AT04', 2023, 'honda', 'V6 Turbo', 736),
+    --('CARAT02', 'AlphaTauri AT04', 2023, 'honda', 'V6 Turbo', 736),
+
+    ('CARW001', 'Williams FW45', 2023, 'mercedes', 'V6 Turbo', 736),
+    --('CARW002', 'Williams FW45', 2023, 'mercedes', 'V6 Turbo', 736),
+
+    ('CARA001', 'Alpine A523', 2023, 'renault', 'V6 Turbo', 736),
+    --('CARA002', 'Alpine A523', 2023, 'renault', 'V6 Turbo', 736),
+
+    ('CARH001', 'Haas VF-23', 2023, 'ferrari', 'V6 Turbo', 736);
+    --('CARH002', 'Haas VF-23', 2023, 'ferrari', 'V6 Turbo', 736);
+
+-- circuit is ready
+INSERT INTO circuit VALUES
+    ('CAUS', 'Adelaide Street Circuit', 'Australia', 'Adelaide', 1, 3, 19, 'street circuit', 3.337),
+    ('CBAH', 'Bahrain International Circuit', 'Bahrain', 'Sakhir', 2, 3, 15, 'race track', 5.412),
+    ('CSAU', 'Jeddah Corniche Circuit', 'Saudi Arabia', 'Jeddah', 2, 3, 27, 'street circuit', 6.175),
+    ('CAZER', 'Baku City Circuit', 'Azerbaijan', 'Baku', 2, 3, 20, 'street circuit', 6.003),
+    ('CMIA', 'Miami International Autodrome', 'United States of America', 'Miami', 2, 3, 19, 'street circuit', 5.41),
+    ('CMON', 'Circuit de Monaco', 'Monaco', 'Monte Carlo', 1, 3, 19, 'street circuit', 3.337),
+    ('CESP', 'Circuit de Barcelona-Catalunya', 'Spain', 'Montmelo', 1, 3, 16, 'race track', 4.675),
+    ('CCAN', 'Circuit Gilles Villeneuve', 'Canada', 'Montreal', 1, 3, 14, 'street circuit', 4.361),
+    ('COST', 'Red Bull Ring', 'Austria', 'Spielberg', 1, 3, 10, 'race track', 4.318),
+    ('CBRI', 'Silverstone Circuit', 'Great Britain', 'Silverstone', 2, 3, 18, 'race track', 5.891),
+    ('CHUN', 'Hungaroring', 'Hungary', 'Budapest', 1, 3, 14, 'race track', 4.381),
+    ('CBEL', 'Circuit de Spa-Francorchamps', 'Belgium', 'Stavelot', 1, 3, 19, 'race track', 7.004),
+    ('CNET', 'Circuit Zandvoort', 'Netherlands', 'Zandvoort', 1, 3, 14, 'race track', 4.259),
+    ('CITA', 'Autodromo Nazionale Monza', 'Italy', 'Monza', 1, 3, 11, 'race track', 5.793),
+    ('CSIN', 'Marina Bay Street Circuit', 'Singapore', 'Singapore', 2, 3, 23, 'street circuit', 5.063),
+    ('CJAP', 'Suzuka International Racing Course', 'Japan', 'Suzuka', 1, 3, 18, 'race track', 5.807),
+    ('CQAT', 'Losail International Circuit', 'Qatar', 'Lusail', 1, 3, 16, 'race track', 5.38),
+    ('CTEX', 'Circuit of The Americas', 'United States of America', 'Austin', 2, 3, 20, 'race track', 5.513),
+    ('CMEX', 'Autodromo Hermanos Rodriguez', 'Mexico', 'Mexico City', 1, 3, 17, 'race track', 4.304),
+    ('CBRA', 'Autodromo Jose Carlos Pace', 'Brazil', 'Sao Paulo', 1, 3, 15, 'race track', 4.309),
+    ('CVEG', 'Las Vegas Street Circuit', 'United States of America', 'Las Vegas', 2, 3, 20, 'street circuit', 6.187),
+    ('CABU', 'Yas Marina Circuit', 'United Arab Emirates', 'Abu Dhabi', 2, 3, 21, 'street circuit', 5.554);
+
+
+
+INSERT INTO constructor VALUES
+    ('MERC', 'Mercedes', 'German', 382, 'Toto Wolff', 'builder', 2, 2, 'PLW44', 'PGS63', 'CARM001'),
+    ('RBRA', 'Red Bull Racing', 'Austrian', 782, 'Christian Horner', 'costumer', 1, 1, 'PMV01', 'PSP11', 'CARRB01'),
+    ('FERR', 'Ferrari', 'Italian', 362, 'Frederic Vasseur', 'builder', 3, 3, 'PCL16', 'PCS55', 'CARF001'),
+    ('ALPI', 'Alpine', 'French', 108, 'Otmar Szafnauer', 'builder', 6, 6, 'PEO31', 'PPG10', 'CARA001'),
+    ('ATAU', 'AlphaTauri', 'Italian', 21, 'Franz Tost', 'customer', 8, 8, 'PDR03', 'PYT22', 'CARAT01'),
+    ('WILL', 'Williams Racing', 'British', 28, 'James Vowles', 'customer', 7, 7, 'PAA23', 'PLG02', 'CARW001'),
+    ('ASTO', 'Aston Martin', 'British', 261, 'Mike Krack', 'costumer', 5, 5, 'PLS18', 'PFA14', 'CARAM01'),
+    ('ALFA', 'Alfa Romeo Racing', 'Italy', 16, 'Alessandro Alunni Bravi', 'customer', 9, 9, 'PZG24', 'PVB77', 'CARAR01'),
+    ('MCLA', 'Mclaren', 'British', 282, 'Andrea Stella', 'customer', 4, 4, 'PLN04', 'POP81', 'CARMC01'),
+    ('HAAS', 'Haas F1 Team', 'American', 12, 'Guenther Steiner', 'costumer', 10, 10, 'PKM20', 'PNH27', 'CARH001');
+
+-- (dates are wrong)
+INSERT INTO race VALUES
+    ('R003', 3, '2023-03-26 14:00:00', 58, '2023-03-26 12:00:00', 'PSP11', 'CAUS'),
+    ('R001', 1, '2023-04-09 13:00:00', 71, '2023-04-09 11:30:00', 'PZG24', 'CBAH'),
+    ('R002', 2, '2023-04-23 15:30:00', 53, '2023-04-23 14:00:00', 'PSP11', 'CSAU'),
+    ('R004', 4, '2023-05-07 12:30:00', 66, '2023-05-07 11:00:00', 'PGS63', 'CAZER'),
+    ('R005', 5, '2023-05-21 14:00:00', 66, '2023-05-21 12:30:00', 'PMV01', 'CMIA'),
+    ('R006', 6, '2023-06-04 13:30:00', 51, '2023-06-04 12:00:00', 'PLW44', 'CMON'),
+    ('R007', 7, '2023-06-18 15:00:00', 71, '2023-06-18 13:30:00', 'PFA14', 'CESP'),
+    ('R008', 8, '2023-07-02 14:30:00', 70, '2023-07-02 13:00:00', 'PSP11', 'CCAN'),
+    ('R009', 9, '2023-07-16 16:00:00', 62, '2023-07-16 14:30:00', 'PMV01', 'COST'),
+    ('R010', 10, '2023-07-30 13:30:00', 55, '2023-07-30 12:00:00', 'PGS63', 'CBRI'),
+    ('R011', 11, '2023-08-13 15:00:00', 68, '2023-08-13 13:30:00', 'PMV01', 'CHUN'),
+    ('R012', 12, '2023-08-27 14:30:00', 59, '2023-08-27 13:00:00', 'PLW44', 'CBEL'),
+    ('R013', 13, '2023-09-10 13:00:00', 72, '2023-09-10 11:30:00', 'POP81', 'CNET'),
+    ('R014', 14, '2023-09-24 15:30:00', 54, '2023-09-24 14:00:00', 'POP81', 'CITA'),
+    ('R015', 15, '2023-10-08 12:30:00', 67, '2023-10-08 11:00:00', 'PLW44', 'CSIN'),
+    ('R016', 16, '2023-10-22 14:00:00', 67, '2023-10-22 12:30:00', 'PMV01', 'CJAP'),
+    ('R017', 17, '2023-11-05 13:30:00', 50, '2023-11-05 12:00:00', 'PMV01', 'CQAT'),
+    ('R018', 18, '2023-11-19 15:00:00', 70, '2023-11-19 13:30:00', 'PYT09', 'CTEX'),
+    ('R019', 19, '2023-12-03 14:30:00', 69, '2023-12-03 13:00:00', 'PMV01', 'CMEX'),
+    ('R020', 20, '2023-12-17 16:00:00', 61, '2023-12-17 14:30:00', 'PLS02', 'CBRA'),
+    ('R021', 21, '2024-01-07 13:30:00', 56, '2024-01-07 12:00:00', 'PLS02', 'CVEG'),
+    ('R022', 22, '2024-01-21 15:00:00', 69, '2024-01-21 13:30:00', 'PVB77', 'CABU');
+
+ select circuit_name from circuit where circuit_length_km = (select
+max(circuit_length_km) from circuit);
+
+ select circuit_name from circuit where circuit_length_km = (select
+min(circuit_length_km) from circuit);
