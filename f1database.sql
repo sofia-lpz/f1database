@@ -280,6 +280,8 @@ INSERT INTO race_result VALUES
     ('RR87', 'R004', 'PNV21', NULL, 18, 0, 0),
     ('RR88', 'R004', 'PDR03', NULL, NULL, NULL, NULL),
     ('RR89', 'R004', 'PLL40', NULL, NULL, NULL, NULL);
+--
+
 
 UPDATE race_result
 SET points_earned = points_earned + 1  
