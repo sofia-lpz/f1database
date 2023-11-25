@@ -281,7 +281,6 @@ INSERT INTO race_result VALUES
     ('RR88', 'R004', 'PDR03', NULL, NULL, NULL, NULL),
     ('RR89', 'R004', 'PLL40', NULL, NULL, NULL, NULL);
 
-
 UPDATE race_result
 SET points_earned = points_earned + 1  
 WHERE fastest_lap = 1;
@@ -296,7 +295,7 @@ FROM pilots
 GROUP BY pilot_nationality
 having pilot_nationality = 'British';
 
-/*List of winner names when Charles Leclerc starts on pole*/
+/*List of winner pilot names when Charles Leclerc starts on pole*/
 SELECT pilots.pilot_name
 FROM race_result AS hola
 INNER JOIN race_result ON hola.race_id = race_result.race_id
