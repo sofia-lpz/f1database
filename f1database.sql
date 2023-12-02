@@ -22,7 +22,7 @@ create table circuit (
 create table pilot (
     pilot_id varchar(100) primary key,
     pilot_name varchar(100),
--- pilot_surname varchar(100),
+    pilot_surname varchar(100),
     pilot_number int,
     pilot_birthdate date,
     pilot_age int,
@@ -119,28 +119,28 @@ INSERT INTO circuit VALUES
 
 -- (weights and heights might be off)
 INSERT INTO pilot VALUES
-    ('PLH44', 'Lewis Hamilton', 44, '1985-01-07', 38, 'British', 174, 70, 7, 3, 0),
-    ('PVB77', 'Valtteri Bottas', 77, '1989-08-28', 34, 'Finnish', 179, 68, 0, 15, 0),
-    ('PMV01', 'Max Verstappen', 1, '1997-09-30', 26, 'Dutch', 183, 68, 2, 1, 0),
-    ('PSP11', 'Sergio Perez', 11, '1990-01-26', 33, 'Mexican', 173, 63, 0, 2, 0),
-    ('PLN04', 'Lando Norris', 4, '1999-11-13', 24, 'British', 170, 63, 0, 5, 0),
-    ('PCL16', 'Charles Leclerc', 16, '1997-10-16', 26, 'Monaco', 183, 68, 0, 7, 0),
-    ('PCS55', 'Carlos Sainz', 55, '1994-09-01', 29, 'Spanish', 175, 68, 0, 6, 0),
-    ('PFA14', 'Fernando Alonso', 14, '1981-07-29', 42, 'Spanish', 171, 68, 2, 4, 0),
-    ('PEO31', 'Esteban Ocon', 31, '1996-09-17', 27, 'French', 186, 70, 0, 12, 0),
-    ('PGR63', 'George Russell', 63, '1998-02-15', 25, 'British', 182, 70, 0, 8, 0),
-    ('PDR03', 'Daniel Ricciardo', 3, '1989-07-01', 34, 'Australian', 182, 71, 0, 17, 0),
-    ('PLS18', 'Lance Stroll', 18, '1998-10-29', 25, 'Canadian', 182, 74, 0, 10, 0),
-    ('POP81', 'Oscar Piastri', 81, '2001-04-06', 22, 'Australian', 165, 61, 0, 9 ,0),
-    ('PLS02', 'Logan Sargent', 2, '2000-12-31', 22, 'American', 173, 70, 0, 20, 0),
-    ('PYT22', 'Yuki Tsunoda', 22, '2000-05-11', 23, 'Japanese', 162, 58, 0, 14, 0),
-    ('PZG24', 'Zhou Guanyu', 24, '1999-05-30', 24, 'Chinese', 179, 70, 0,18,0),
-    ('PKM20', 'Kevin Magnussen', 20, '1992-10-05', 31, 'Danish', 173, 74, 0, 19, 0),
-    ('PNH27','Nico Hulkenberg', 27, '1987-08-19', 36, 'German', 183, 70, 0, 16, 0),
-    ('PAA23','Alex Albon', 23, '1996-03-23', 27, 'Thai', 180, 68, 99,13,0),
-    ('PPG10', 'Pierre Gasly', 10,'1996-02-07', 27, 'French', 174, 64,0,11,0),
-    ('PNV21', 'Nick de Vries', 21, '1995-09-06', 28, 'Dutch', 180, 70, 0, 21, 0),
-    ('PLL40', 'Liam Lawson', 40, '2002-01-11', 21, 'New Zealander', 170, 60, 0, 22, 0);
+    ('PLH44', 'Lewis','Hamilton', 44, '1985-01-07', 38, 'British', 174, 70, 7, 3, 0),
+    ('PVB77', 'Valtteri ','Bottas', 77, '1989-08-28', 34, 'Finnish', 179, 68, 0, 15, 0),
+    ('PMV01', 'Max ','Verstappen', 1, '1997-09-30', 26, 'Dutch', 183, 68, 2, 1, 0),
+    ('PSP11', 'Sergio',' Perez', 11, '1990-01-26', 33, 'Mexican', 173, 63, 0, 2, 0),
+    ('PLN04', 'Lando ','Norris', 4, '1999-11-13', 24, 'British', 170, 63, 0, 5, 0),
+    ('PCL16', 'Charles ','Leclerc', 16, '1997-10-16', 26, 'Monaco', 183, 68, 0, 7, 0),
+    ('PCS55', 'Carlos',' Sainz', 55, '1994-09-01', 29, 'Spanish', 175, 68, 0, 6, 0),
+    ('PFA14', 'Fernando',' Alonso', 14, '1981-07-29', 42, 'Spanish', 171, 68, 2, 4, 0),
+    ('PEO31', 'Esteban',' Ocon', 31, '1996-09-17', 27, 'French', 186, 70, 0, 12, 0),
+    ('PGR63', 'George ','Russell', 63, '1998-02-15', 25, 'British', 182, 70, 0, 8, 0),
+    ('PDR03', 'Daniel ','Ricciardo', 3, '1989-07-01', 34, 'Australian', 182, 71, 0, 17, 0),
+    ('PLS18', 'Lance ','Stroll', 18, '1998-10-29', 25, 'Canadian', 182, 74, 0, 10, 0),
+    ('POP81', 'Oscar ','Piastri', 81, '2001-04-06', 22, 'Australian', 165, 61, 0, 9 ,0),
+    ('PLS02', 'Logan ','Sargent', 2, '2000-12-31', 22, 'American', 173, 70, 0, 20, 0),
+    ('PYT22', 'Yuki ','Tsunoda', 22, '2000-05-11', 23, 'Japanese', 162, 58, 0, 14, 0),
+    ('PZG24', 'Zhou ','Guanyu', 24, '1999-05-30', 24, 'Chinese', 179, 70, 0,18,0),
+    ('PKM20', 'Kevin ','Magnussen', 20, '1992-10-05', 31, 'Danish', 173, 74, 0, 19, 0),
+    ('PNH27','Nico ','Hulkenberg', 27, '1987-08-19', 36, 'German', 183, 70, 0, 16, 0),
+    ('PAA23','Alex ','Albon', 23, '1996-03-23', 27, 'Thai', 180, 68, 99,13,0),
+    ('PPG10', 'Pierre ','Gasly', 10,'1996-02-07', 27, 'French', 174, 64,0,11,0),
+    ('PNV21', 'Nick ','de Vries', 21, '1995-09-06', 28, 'Dutch', 180, 70, 0, 21, 0),
+    ('PLL40', 'Liam ','Lawson', 40, '2002-01-11', 21, 'New Zealander', 170, 60, 0, 22, 0);
 
 INSERT INTO constructor VALUES
     ('MERC', 'Mercedes', 'German', 382, 'Toto Wolff', 'builder', 2, 2, 'PLH44', 'PGR63', 'CARM001'),
@@ -526,7 +526,7 @@ select circuit_name from circuit where circuit_length_km = (select
 max(circuit_length_km) from circuit);
 
 /*amount and names of british drivers*/
-SELECT COUNT(pilot_id), pilot_name, pilot_nationality
+SELECT COUNT(pilot_id), pilot_nationality
 FROM pilot
 GROUP BY pilot_nationality
 having pilot_nationality = 'British';
