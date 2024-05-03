@@ -1,11 +1,12 @@
 create table car (
-    car_id varchar(100) primary key,
-    car_model varchar(100),
-    car_year int,
+    carId varchar(50) default car auto_increment,
+    model varchar(100),
+    year year NOT NULL,
     power_unit enum ('mercedes', 'ferrari', 'renault', 'honda'),
-    engine_type varchar(100),
-    car_weight int
-);
+    engine_type enum ('v6', 'v8', 'v10', 'v12'),
+    weight int,
+    primary key (carId)
+); engine = InnoDB default charset = utf8;
 
 create table circuit (
     circuit_id varchar(100) primary key,
