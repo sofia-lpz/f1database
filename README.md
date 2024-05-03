@@ -1,5 +1,7 @@
 # f1database
-MySQL data base about the formula one 2023 season to practice queries
-(Data input for race_results still in progress!)
+MySQL scheme and data for Formula One results
+WIP
 
-This database does not include sprint races results
+## Requirements
+- mysql
+
